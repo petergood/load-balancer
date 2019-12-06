@@ -9,6 +9,11 @@ import java.nio.charset.Charset;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * @author Peter Nicholson
+ * @since 1.0
+ * An Etcd client for storing String keys and String values
+ */
 @Service
 public class EtcdBackend implements Backend<String, String> {
 

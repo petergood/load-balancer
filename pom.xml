@@ -22,6 +22,7 @@
     <properties>
         <junit.version>4.13-rc-1</junit.version>
         <spring.tests.version>5.2.1.RELEASE</spring.tests.version>
+        <mockito.version>1.10.18</mockito.version>
     </properties>
 
     <dependencies>
@@ -40,6 +41,13 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>${spring.tests.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
