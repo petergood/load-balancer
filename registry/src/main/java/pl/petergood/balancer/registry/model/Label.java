@@ -1,36 +1,24 @@
 package pl.petergood.balancer.registry.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Objects;
 
+@AllArgsConstructor
 public class Label {
     @JsonProperty("key")
+    @Getter
+    @Setter
     private String key;
 
     @JsonProperty("value")
+    @Getter
+    @Setter
     private String value;
-
-    public Label(String key, String value) {
-        this.key = key;
-        this.value = value;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
 
     @Override
     public boolean equals(Object o) {

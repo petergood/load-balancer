@@ -1,5 +1,8 @@
 package pl.petergood.balancer.registry.service;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import pl.petergood.balancer.registry.model.Label;
 
 import java.util.List;
@@ -10,32 +13,18 @@ import java.util.Objects;
  * @since 1.0
  * Represents an HTTP server to which requests may be sent
  */
+@AllArgsConstructor
+@Builder
 public class HttpService implements Service {
 
+    @Getter
     private String name;
+
+    @Getter
     private List<Label> labels;
+
+    @Getter
     private String address;
-
-    public HttpService(String name, List<Label> labels, String address) {
-        this.name = name;
-        this.labels = labels;
-        this.address = address;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public List<Label> getLabels() {
-        return labels;
-    }
-
-    @Override
-    public String getAddress() {
-        return address;
-    }
 
     @Override
     public boolean equals(Object o) {

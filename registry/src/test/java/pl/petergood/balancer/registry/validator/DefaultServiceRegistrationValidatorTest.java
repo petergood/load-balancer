@@ -11,9 +11,10 @@ public class DefaultServiceRegistrationValidatorTest {
     @Test
     public void shouldValidateValidRegistrationRequest() {
         // given
-        ServiceRegistrationRequest serviceRegistrationRequest = new ServiceRegistrationRequest();
-        serviceRegistrationRequest.setName("application");
-        serviceRegistrationRequest.setAddress("localhost");
+        ServiceRegistrationRequest serviceRegistrationRequest = ServiceRegistrationRequest.builder()
+                .name("application")
+                .address("localhost")
+                .build();
 
         // when
         boolean validationResult = validator.isValid(serviceRegistrationRequest);
@@ -25,7 +26,8 @@ public class DefaultServiceRegistrationValidatorTest {
     @Test
     public void shouldValidateInvalidRegistrationRequest() {
         // given
-        ServiceRegistrationRequest serviceRegistrationRequest = new ServiceRegistrationRequest();
+        ServiceRegistrationRequest serviceRegistrationRequest = ServiceRegistrationRequest.builder()
+                .build();
 
         // when
         boolean validationResult = validator.isValid(serviceRegistrationRequest);

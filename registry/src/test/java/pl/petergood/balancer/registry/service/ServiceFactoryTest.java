@@ -12,10 +12,11 @@ public class ServiceFactoryTest {
     @Test
     public void verifyServiceIsCreated() {
         // given
-        ServiceRegistrationRequest serviceRegistrationRequest = new ServiceRegistrationRequest();
-        serviceRegistrationRequest.setName("application");
-        serviceRegistrationRequest.setLabels(Collections.singletonList(new Label("key", "value")));
-        serviceRegistrationRequest.setAddress("localhost");
+        ServiceRegistrationRequest serviceRegistrationRequest = ServiceRegistrationRequest.builder()
+                .name("application")
+                .labels(Collections.singletonList(new Label("key", "value")))
+                .address("localhost")
+                .build();
 
         // when
         Service service = ServiceFactory.createService(serviceRegistrationRequest);

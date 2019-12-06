@@ -5,9 +5,11 @@ import pl.petergood.balancer.registry.model.ServiceRegistrationRequest;
 public class ServiceFactory {
 
     public static Service createService(ServiceRegistrationRequest serviceRegistrationRequest) {
-        return new HttpService(serviceRegistrationRequest.getName(),
-                serviceRegistrationRequest.getLabels(),
-                serviceRegistrationRequest.getAddress());
+        return HttpService.builder()
+                .name(serviceRegistrationRequest.getName())
+                .address(serviceRegistrationRequest.getAddress())
+                .labels(serviceRegistrationRequest.getLabels())
+                .build();
     }
 
 }
