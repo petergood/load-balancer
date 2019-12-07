@@ -2,11 +2,11 @@ package pl.petergood.balancer.registry.service;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import pl.petergood.balancer.registry.model.Label;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * @author Peter Nicholson
@@ -15,6 +15,7 @@ import java.util.Objects;
  */
 @AllArgsConstructor
 @Builder
+@EqualsAndHashCode
 public class HttpService implements Service {
 
     @Getter
@@ -25,14 +26,4 @@ public class HttpService implements Service {
 
     @Getter
     private String address;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        HttpService that = (HttpService) o;
-        return Objects.equals(name, that.name) &&
-                Objects.equals(labels, that.labels) &&
-                Objects.equals(address, that.address);
-    }
 }

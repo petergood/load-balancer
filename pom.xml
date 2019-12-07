@@ -11,6 +11,7 @@
     <modules>
         <module>registry</module>
         <module>integration-tests</module>
+        <module>registry-client</module>
     </modules>
 
     <parent>
