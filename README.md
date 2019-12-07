@@ -1,1 +1,1 @@
-# Load balancer
+# Load balancer [![CircleCI](https://circleci.com/gh/petergood/load-balancer.svg?style=svg)](https://circleci.com/gh/petergood/load-balancer)
