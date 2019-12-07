@@ -1,5 +1,6 @@
 package pl.petergood.balancer.registry;
 
+import pl.petergood.balancer.common.observer.Observable;
 import pl.petergood.balancer.registry.service.Service;
 
 import java.util.Collection;
@@ -13,7 +14,7 @@ import java.util.Set;
  * <p>A simple in-memory service registry, local to one Registry node</p>
  * <p>Usage meant for single node Registry setup and testing</p>
  */
-public class InMemoryRegistry implements Registry {
+public class InMemoryRegistry extends Observable<Service> implements Registry {
     /**
      * The Set backing this registry
      */
@@ -27,5 +28,6 @@ public class InMemoryRegistry implements Registry {
     @Override
     public void addService(Service service) {
         services.add(service);
+        super.dispatch(service);
     }
 }

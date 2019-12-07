@@ -18,7 +18,7 @@ import java.util.List;
  * <p>Services register upon startup or after receiving the REGISTRY_AVAILABLE event</p>
  */
 @RestController
-public class ServiceRegistrationEndpoint {
+public class ServiceRegistrationController {
 
     /**
      * Service validators to run after receiving a registration request
@@ -30,8 +30,8 @@ public class ServiceRegistrationEndpoint {
      */
     private Registry registry;
 
-    public ServiceRegistrationEndpoint(List<ServiceRegistrationValidator> serviceRegistrationValidators,
-                                       Registry registry) {
+    public ServiceRegistrationController(List<ServiceRegistrationValidator> serviceRegistrationValidators,
+                                         Registry registry) {
         this.serviceRegistrationValidators = serviceRegistrationValidators;
         this.registry = registry;
     }

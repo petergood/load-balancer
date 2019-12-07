@@ -22,6 +22,12 @@
                 <artifactId>jetcd-core</artifactId>
                 <version>${jetcd.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>pl.petergood</groupId>
+                <artifactId>common</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -29,6 +35,11 @@
         <dependency>
             <groupId>io.etcd</groupId>
             <artifactId>jetcd-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>pl.petergood</groupId>
+            <artifactId>common</artifactId>
         </dependency>
     </dependencies>
 </project>
